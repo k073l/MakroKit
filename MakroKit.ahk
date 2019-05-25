@@ -54,6 +54,7 @@ Fishing:
 if WinActive("Minecraft 1. ahk_exe javaw.exe")
 	IfWinExist %wintit%
 	BreakLoop = 0
+ControlClick, , %wintit%, ,Right, , NAD
 		Loop
 		{
 			if (BreakLoop = 1)
@@ -63,8 +64,6 @@ if WinActive("Minecraft 1. ahk_exe javaw.exe")
 				BreakLoop = 0
 				break
 			}
-
-				ControlClick, , %wintit%, ,Right, , NAD
 		}
 	Return
 }
@@ -73,6 +72,7 @@ Dig:
 if WinActive("Minecraft 1. ahk_exe javaw.exe")
 	IfWinExist %wintit%
 	BreakLoop = 0
+ControlClick, , %wintit%, ,Left, , NAD
 		Loop
 		{
 			if (BreakLoop = 1)
@@ -82,8 +82,6 @@ if WinActive("Minecraft 1. ahk_exe javaw.exe")
 				BreakLoop = 0
 				break
 			}
-
-				ControlClick, , %wintit%, ,Left, , NAD
 		}
 	Return
 }
