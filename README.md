@@ -1,7 +1,7 @@
 # MakroKit  
   
 Zestaw makr do Minecrafta, których możesz używać bez potrzeby posiadania MC jako aktywne okno.   
-Po prostu:  
+Po prostu:
 1. Otwórz program MakroKit  
 2. Włącz Minecrafta i ustaw kursor w miejscu, gdzie chcesz, aby dana akcja była wykonywana  
 3. Jeśli nie masz wyłączonego "pause on lost focus" naciśnij F3+P  
