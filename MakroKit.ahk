@@ -5,6 +5,7 @@
 SetBatchLines -1
 SetTitleMatchMode 2
 #SingleInstance Force
+#NoTrayIcon
 
 wintit = Minecraft 1.
 
