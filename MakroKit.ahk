@@ -7,11 +7,6 @@ SetTitleMatchMode 2
 #SingleInstance Force
 #NoTrayIcon
 
-wintit = Minecraft 1.
-
-;===================================================================================================
-;Shortcuts
-;===================================================================================================
 ;by: jakiś ziomek z reddita
 ;kot poprawił i dodał coś od siebie
 
@@ -41,27 +36,31 @@ Gui Add, Button, x88 y176 w80 h23 gSpamppm, % "PPM"
 Gui Add, Button, x8 y208 w158 h40 gStop, % "Zatrzymaj wszystkie makra"
 
 Gui Show, w175 h254, MakroKit
+WinSet, Transparent, 170, MakroKit
 Return
 
 GuiEscape:
 GuiClose:
     ExitApp
 
+	
+	
+
+	
 
 ;===================================================================================================
 ;===================================================================================================
 Fishing:
 {
-if WinActive("Minecraft 1. ahk_exe javaw.exe")
-	IfWinExist %wintit%
+IfWinExist ("Minecraft 1. ahk_exe javaw.exe")
 	BreakLoop = 0
-ControlClick, , %wintit%, ,Right, , NAD
+ControlClick, , Minecraft 1. ahk_exe javaw.exe, ,Right, , NAD
 		Loop
 		{
 			if (BreakLoop = 1)
 			{
 				Sleep 500
-				ControlClick, , %wintit%, ,Right, , NAU
+				ControlClick, , Minecraft 1. ahk_exe javaw.exe, ,Right, , NAU
 				BreakLoop = 0
 				break
 			}
@@ -70,16 +69,15 @@ ControlClick, , %wintit%, ,Right, , NAD
 }
 Dig:
 {
-if WinActive("Minecraft 1. ahk_exe javaw.exe")
-	IfWinExist %wintit%
+IfWinExist ("Minecraft 1. ahk_exe javaw.exe")
 	BreakLoop = 0
-ControlClick, , %wintit%, ,Left, , NAD
+ControlClick, , Minecraft 1. ahk_exe javaw.exe, ,Left, , NAD
 		Loop
 		{
 			if (BreakLoop = 1)
 			{
 				Sleep 500
-				ControlClick, , %wintit%, ,Left, , NAU
+				ControlClick, , Minecraft 1. ahk_exe javaw.exe, ,Left, , NAU
 				BreakLoop = 0
 				break
 			}
@@ -88,8 +86,7 @@ ControlClick, , %wintit%, ,Left, , NAD
 }
 Attack:
 {
-if WinActive("Minecraft 1. ahk_exe javaw.exe")
-	IfWinExist %wintit%
+IfWinExist ("Minecraft 1. ahk_exe javaw.exe")
 	BreakLoop = 0
 		Loop
 		{
@@ -100,7 +97,7 @@ if WinActive("Minecraft 1. ahk_exe javaw.exe")
 			}
 
 			Sleep 1250
-				ControlClick, , %wintit%, ,Left, , NA
+				ControlClick, , Minecraft 1. ahk_exe javaw.exe, ,Left, , NA
 		}
 	Return
 }
@@ -108,8 +105,7 @@ if WinActive("Minecraft 1. ahk_exe javaw.exe")
 Spamlpm:
 {
 Gui, Submit, NoHide
-if WinActive("Minecraft 1. ahk_exe javaw.exe")
-	IfWinExist %wintit%
+IfWinExist ("Minecraft 1. ahk_exe javaw.exe")
 	BreakLoop = 0
 		Loop
 		{
@@ -120,7 +116,7 @@ if WinActive("Minecraft 1. ahk_exe javaw.exe")
 			}
 
 			Sleep 1000 / CPS
-				ControlClick, , %wintit%, ,Left, , NA
+				ControlClick, , Minecraft 1. ahk_exe javaw.exe, ,Left, , NA
 		}
 	Return
 }
@@ -128,8 +124,7 @@ if WinActive("Minecraft 1. ahk_exe javaw.exe")
 Spamppm:
 {
 Gui, Submit, NoHide
-if WinActive("Minecraft 1. ahk_exe javaw.exe")
-	IfWinExist %wintit%
+IfWinExist ("Minecraft 1. ahk_exe javaw.exe")
 	BreakLoop = 0
 		Loop
 		{
@@ -140,7 +135,7 @@ if WinActive("Minecraft 1. ahk_exe javaw.exe")
 			}
 
 			Sleep 1000 / CPS
-				ControlClick, , %wintit%, ,Right, , NA
+				ControlClick, , Minecraft 1. ahk_exe javaw.exe, ,Right, , NA
 		}
 	Return
 }
