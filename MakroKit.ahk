@@ -20,39 +20,46 @@ SetTitleMatchMode 2
 #SingleInstance Force
 SetWorkingDir %A_ScriptDir%
 
-Gui Font, s17 Bold q5, Palatino Linotype
-Gui Add, Text, x28 y8 w107 h23 +0x200, MakroKit
-Gui Font
-Gui Font, s9 Italic
-Gui Add, Text, x66 y32 w32 h23 +0x200, by k0
-Gui Font
-Gui Add, Button, x8 y64 w80 h23 gFishing, % "Łowienie (ppm)"
-Gui Add, Button, x88 y64 w80 h23 gDig, % "Kopanie (lpm)"
-Gui Add, Button, x8 y88 w158 h23 gAttack, % "Szerokie ostrze (1s lpm)"
-Gui Add, Text, x8 y128 w158 h23 +0x200, Wpisz ilość CPS dla autoklikera
-Gui Add, Edit, x8 y152 w158 h21 vCPS
-Gui Add, Button, x8 y176 w80 h23 gSpamlpm, % "LPM"
-Gui Add, Button, x88 y176 w80 h23 gSpamppm, % "PPM"
-Gui Add, Button, x8 y208 w158 h40 gStop, % "Zatrzymaj wszystkie makra"
+wintit = Minecraft 1. ahk_exe javaw.exe
 
-Gui Show, w175 h254, MakroKit
+Gui Font, Italic
+Gui Add, Text, x87 y40 w33 h24 +0x200, by k0
+Gui Font
+Gui Add, Button, x5 y176 w95 h36 gFishing, % " Przytrzymywanie ppm"
+Gui Add, Button, x109 y176 w95 h36 gDig, % "Przytrzymywanie lpm"
+Gui Add, Text, x5 y224 w197 h31, Co ile sekund ma być wykonywane kliknięcie?
+Gui Add, Edit, x5 y264 w197 h21 vKlik
+Gui Add, Button, x5 y288 w80 h23 gclicklpm, % "LPM"
+Gui Add, Button, x117 y288 w80 h23 gclickppm, % "PPM"
+Gui Add, Button, x5 y328 w197 h23 grapidppm, % "Spam ppm"
+Gui Add, Button, x5 y352 w197 h23 grapidlpm, % "Spam lpm"
+Gui Add, Text, x5 y392 w192 h23 +0x200, Wpisz ilość CPS dla autoklikera
+Gui Add, Edit, x5 y416 w192 h21 vCPS
+Gui Add, Button, x5 y440 w80 h23 gSpamlpm, % "LPM"
+Gui Add, Button, x117 y440 w80 h23 gSpamppm, % "PPM"
+Gui Add, Button, x5 y480 w192 h38 gStop, % "Zatrzymaj wszystkie makra"
+Gui Font, s20 Bold, Arial
+Gui Add, Text, x28 y8 w152 h32 +0x200 Center, MakroKit
+Gui Font
+Gui Add, Text, x11 y72 w186 h44, Jeśli program nie działa, ponieważ Twoje okno Minecrafta ma inną nazwę niż standardowa, zmień ją tutaj:
+Gui Add, Edit, x-392 y-64 w186 h21, vCPS
+Gui Add, Button, x11 y137 w186 h23 gName, % "Zmień nazwę"
+Gui Add, Edit, x11 y116 w186 h21 vNazwa
+
+Gui Show, w208 h526, MakroKit
 WinSet, Transparent, 170, MakroKit
 Return
-
 GuiEscape:
 GuiClose:
+	BreakLoop = 1
     ExitApp
 
-	
-	
-
-	
 
 ;===================================================================================================
 ;===================================================================================================
 Fishing:
 {
-IfWinExist ("Minecraft 1. ahk_exe javaw.exe")
+IfWinExist (%wintit%)
 	BreakLoop = 0
 ControlClick, , Minecraft 1. ahk_exe javaw.exe, ,Right, , NAD
 		Loop
@@ -69,7 +76,7 @@ ControlClick, , Minecraft 1. ahk_exe javaw.exe, ,Right, , NAD
 }
 Dig:
 {
-IfWinExist ("Minecraft 1. ahk_exe javaw.exe")
+IfWinExist (%wintit%)
 	BreakLoop = 0
 ControlClick, , Minecraft 1. ahk_exe javaw.exe, ,Left, , NAD
 		Loop
@@ -84,9 +91,46 @@ ControlClick, , Minecraft 1. ahk_exe javaw.exe, ,Left, , NAD
 		}
 	Return
 }
-Attack:
+rapidlpm:
 {
-IfWinExist ("Minecraft 1. ahk_exe javaw.exe")
+IfWinExist (%wintit%)
+	BreakLoop = 0
+		Loop
+		{
+			if (BreakLoop = 1)
+			{
+				BreakLoop = 0
+				break
+			}
+				ControlClick, , Minecraft 1. ahk_exe javaw.exe, ,Left, , NAD
+				Sleep 100
+				ControlClick, , Minecraft 1. ahk_exe javaw.exe, ,Left, , NAU
+		}
+	Return
+}
+
+rapidppm:
+{
+IfWinExist (%wintit%)
+	BreakLoop = 0
+		Loop
+		{
+			if (BreakLoop = 1)
+			{
+				BreakLoop = 0
+				break
+			}
+				ControlClick, , Minecraft 1. ahk_exe javaw.exe, ,Right, , NAD
+				Sleep 100
+				ControlClick, , Minecraft 1. ahk_exe javaw.exe, ,Right, , NAU
+		}
+	Return
+}
+
+clicklpm:
+{
+Gui, Submit, NoHide
+IfWinExist (%wintit%)
 	BreakLoop = 0
 		Loop
 		{
@@ -96,16 +140,35 @@ IfWinExist ("Minecraft 1. ahk_exe javaw.exe")
 				break
 			}
 
-			Sleep 1250
+			Sleep %Klik%
+				ControlClick, , Minecraft 1. ahk_exe javaw.exe, ,Left, , NA
+		}
+	Return
+}
+clickppm:
+{
+Gui, Submit, NoHide
+IfWinExist (%wintit%)
+	BreakLoop = 0
+		Loop
+		{
+			if (BreakLoop = 1)
+			{
+				BreakLoop = 0
+				break
+			}
+
+			Sleep %Klik%
 				ControlClick, , Minecraft 1. ahk_exe javaw.exe, ,Left, , NA
 		}
 	Return
 }
 
+
 Spamlpm:
 {
 Gui, Submit, NoHide
-IfWinExist ("Minecraft 1. ahk_exe javaw.exe")
+IfWinExist (%wintit%)
 	BreakLoop = 0
 		Loop
 		{
@@ -124,7 +187,7 @@ IfWinExist ("Minecraft 1. ahk_exe javaw.exe")
 Spamppm:
 {
 Gui, Submit, NoHide
-IfWinExist ("Minecraft 1. ahk_exe javaw.exe")
+IfWinExist (%wintit%)
 	BreakLoop = 0
 		Loop
 		{
@@ -141,7 +204,14 @@ IfWinExist ("Minecraft 1. ahk_exe javaw.exe")
 }
 ;==================================================================================================
 Stop:
+{
 BreakLoop = 1
 return
-
+}
 ;===================================================================================================
+Name:
+{
+Gui, Submit, NoHide
+wintit := Nazwa
+return
+}

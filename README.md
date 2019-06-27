@@ -9,10 +9,12 @@ Po prostu:
 5. Wybierz akcję poprzez naciśnięcie odpowiedniego przycisku.  
   
 Program zawiera makra takie jak:  
-* Przytrzymywanie ppm (łowienie)  
-* Przytrzymywanie lpm (kopanie)  
-* Kliknięcie lpm raz na sekundę (szerokie ostrze)  
+* Przytrzymywanie ppm  
+* Przytrzymywanie lpm  
+* Autokliker lpm i ppm z modyfikacją przerw między kliknięciami  
 * Autokliker lpm i ppm z modyfikacją cps  
+* Ciągłe klikanie lpm lub ppm  
+* Zmianę nazwy okna, w którym mają być wykonywane makra  
   
 **Program uruchamia się za pomocą MakroKit.exe**  
   
