@@ -59,15 +59,15 @@ GuiClose:
 ;===================================================================================================
 Fishing:
 {
-IfWinExist (%wintit%)
+IfWinExist %wintit%
 	BreakLoop = 0
-ControlClick, , Minecraft 1. ahk_exe javaw.exe, ,Right, , NAD
+ControlClick, , %wintit%, ,Right, , NAD
 		Loop
 		{
 			if (BreakLoop = 1)
 			{
 				Sleep 500
-				ControlClick, , Minecraft 1. ahk_exe javaw.exe, ,Right, , NAU
+				ControlClick, , %wintit%, ,Right, , NAU
 				BreakLoop = 0
 				break
 			}
@@ -76,15 +76,15 @@ ControlClick, , Minecraft 1. ahk_exe javaw.exe, ,Right, , NAD
 }
 Dig:
 {
-IfWinExist (%wintit%)
+IfWinExist %wintit%
 	BreakLoop = 0
-ControlClick, , Minecraft 1. ahk_exe javaw.exe, ,Left, , NAD
+ControlClick, , %wintit%, ,Left, , NAD
 		Loop
 		{
 			if (BreakLoop = 1)
 			{
 				Sleep 500
-				ControlClick, , Minecraft 1. ahk_exe javaw.exe, ,Left, , NAU
+				ControlClick, , %wintit%, ,Left, , NAU
 				BreakLoop = 0
 				break
 			}
@@ -93,7 +93,7 @@ ControlClick, , Minecraft 1. ahk_exe javaw.exe, ,Left, , NAD
 }
 rapidlpm:
 {
-IfWinExist (%wintit%)
+IfWinExist %wintit%
 	BreakLoop = 0
 		Loop
 		{
@@ -102,16 +102,16 @@ IfWinExist (%wintit%)
 				BreakLoop = 0
 				break
 			}
-				ControlClick, , Minecraft 1. ahk_exe javaw.exe, ,Left, , NAD
+				ControlClick, , %wintit%, ,Left, , NAD
 				Sleep 100
-				ControlClick, , Minecraft 1. ahk_exe javaw.exe, ,Left, , NAU
+				ControlClick, , %wintit%, ,Left, , NAU
 		}
 	Return
 }
 
 rapidppm:
 {
-IfWinExist (%wintit%)
+IfWinExist %wintit%
 	BreakLoop = 0
 		Loop
 		{
@@ -120,9 +120,9 @@ IfWinExist (%wintit%)
 				BreakLoop = 0
 				break
 			}
-				ControlClick, , Minecraft 1. ahk_exe javaw.exe, ,Right, , NAD
+				ControlClick, , %wintit%, ,Right, , NAD
 				Sleep 100
-				ControlClick, , Minecraft 1. ahk_exe javaw.exe, ,Right, , NAU
+				ControlClick, , %wintit%, ,Right, , NAU
 		}
 	Return
 }
@@ -130,7 +130,7 @@ IfWinExist (%wintit%)
 clicklpm:
 {
 Gui, Submit, NoHide
-IfWinExist (%wintit%)
+IfWinExist %wintit%
 	BreakLoop = 0
 		Loop
 		{
@@ -141,14 +141,14 @@ IfWinExist (%wintit%)
 			}
 
 			Sleep %Klik%
-				ControlClick, , Minecraft 1. ahk_exe javaw.exe, ,Left, , NA
+				ControlClick, , %wintit%, ,Left, , NA
 		}
 	Return
 }
 clickppm:
 {
 Gui, Submit, NoHide
-IfWinExist (%wintit%)
+IfWinExist %wintit%
 	BreakLoop = 0
 		Loop
 		{
@@ -159,7 +159,7 @@ IfWinExist (%wintit%)
 			}
 
 			Sleep %Klik%
-				ControlClick, , Minecraft 1. ahk_exe javaw.exe, ,Left, , NA
+				ControlClick, , %wintit%, ,Left, , NA
 		}
 	Return
 }
@@ -168,7 +168,7 @@ IfWinExist (%wintit%)
 Spamlpm:
 {
 Gui, Submit, NoHide
-IfWinExist (%wintit%)
+IfWinExist %wintit%
 	BreakLoop = 0
 		Loop
 		{
@@ -179,7 +179,7 @@ IfWinExist (%wintit%)
 			}
 
 			Sleep 1000 / CPS
-				ControlClick, , Minecraft 1. ahk_exe javaw.exe, ,Left, , NA
+				ControlClick, , %wintit%, ,Left, , NA
 		}
 	Return
 }
@@ -187,7 +187,7 @@ IfWinExist (%wintit%)
 Spamppm:
 {
 Gui, Submit, NoHide
-IfWinExist (%wintit%)
+IfWinExist %wintit%
 	BreakLoop = 0
 		Loop
 		{
@@ -198,7 +198,7 @@ IfWinExist (%wintit%)
 			}
 
 			Sleep 1000 / CPS
-				ControlClick, , Minecraft 1. ahk_exe javaw.exe, ,Right, , NA
+				ControlClick, , %wintit%, ,Right, , NA
 		}
 	Return
 }
