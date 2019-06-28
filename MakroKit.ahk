@@ -23,7 +23,7 @@ SetWorkingDir %A_ScriptDir%
 wintit = Minecraft 1. ahk_exe javaw.exe
 
 Gui Font, Italic
-Gui Add, Text, x87 y40 w33 h24 +0x200, by k0
+Gui Add, Text, x87 y40 w60 h24 +0x200, by k0, v. 3.3
 Gui Font
 Gui Add, Button, x5 y176 w95 h36 gFishing, % " Przytrzymywanie ppm"
 Gui Add, Button, x109 y176 w95 h36 gDig, % "Przytrzymywanie lpm"
@@ -139,9 +139,8 @@ IfWinExist %wintit%
 				BreakLoop = 0
 				break
 			}
-
-			Sleep %Klik%
-				ControlClick, , %wintit%, ,Left, , NA
+			ControlClick, , %wintit%, ,Left, , NA
+			Sleep 1000 * Klik
 		}
 	Return
 }
@@ -157,9 +156,8 @@ IfWinExist %wintit%
 				BreakLoop = 0
 				break
 			}
-
-			Sleep %Klik%
-				ControlClick, , %wintit%, ,Left, , NA
+			ControlClick, , %wintit%, ,Left, , NA
+			Sleep 1000 * Klik
 		}
 	Return
 }

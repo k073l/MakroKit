@@ -14,7 +14,7 @@ Program zawiera makra takie jak:
 * Autokliker lpm i ppm z modyfikacją przerw między kliknięciami  
 * Autokliker lpm i ppm z modyfikacją cps  
 * Ciągłe klikanie lpm lub ppm  
-* Zmianę nazwy okna, w którym mają być wykonywane makra  
+* Zmianę nazwy okna, w którym mają być wykonywane makra (nie działa do końca)  
   
 **Program uruchamia się za pomocą MakroKit.exe**  
   
